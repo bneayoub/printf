@@ -1,2 +1,2 @@
-# printf
-This is the first academic project in alx software engineering program
+# Printf Project - ALX
+This is the first academic project in alx software engineering program. 
