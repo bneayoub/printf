@@ -14,5 +14,6 @@ int handle_char(va_list args);
 int handle_string(va_list args);
 void _print_integer(int n, int *count);
 int handle_integer(va_list args);
+int handle_binary(va_list args);
 
 #endif
