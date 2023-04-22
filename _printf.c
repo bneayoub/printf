@@ -1,58 +1,46 @@
+#include "main.h"
 #include <stdarg.h>
 #include <string.h>
 #include <unistd.h>
-/**
- * _putchar - prints char
- * @s: char to be printed
- * Return: char
- */
-int _putchar(char s)
-{
-	return (write(1, &s, 1));
-}
 
 /**
  * _printf - implementation of printf from scratch
- * @format: string to format
+ * @format: the string containing specifiers
  * Return: count of carachters printed
  */
-
 int _printf(const char *format, ...)
 {
-	int i = 0, j = 0;
-	char *str;
 	va_list args;
+	const char *p;
+	int count = 0;
 
 	va_start(args, format);
-	while (format && format[i])
+	for (p = format; *p; ++p)
 	{
-		if (format[i] == '%')
+		if (*p == '%')
 		{
-			switch (format[i + 1])
+			++p;
+			if (*p == '\0')
+				break;
+			switch (*p)
 			{
 			case 'c':
-				_putchar((char)va_arg(args, int));
-				j++;
+				count += handle_char(args);
 				break;
 			case 's':
-				str = va_arg(args, char *);
-				write(1, str, strlen(str));
-				j = j + strlen(str);
+				count += handle_string(args);
 				break;
 			case '%':
-				_putchar('%');
-				j++;
+				count += _putchar('%');
+				break;
+			default:
+				count += _putchar(*p);
 				break;
 			}
-			i++;
 		}
 		else
-		{
-			_putchar(format[i]);
-			j++;
-		}
-		i++;
+			count += _putchar(*p);
 	}
 	va_end(args);
-	return (j);
+	return (count);
 }
