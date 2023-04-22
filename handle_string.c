@@ -12,7 +12,7 @@ int handle_string(va_list args)
 
 	if (!str)
 	{
-		str = "(nil)";
+		str = "(null)";
 	}
 
 	for (i = 0; str[i]; i++)

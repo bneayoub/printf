@@ -1,7 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
-#include <string.h>
-#include <unistd.h>
 
 /**
  * _printf - implementation of printf from scratch
