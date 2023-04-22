@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <stddef.h>
 #include <stdio.h>
+#include <limits.h>
 
 /* Function prototypes */
 int _putchar(char c);

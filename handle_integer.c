@@ -16,7 +16,7 @@ void _print_integer(int n, int *count)
 	{
 		_print_integer(n / 10, count);
 	}
-	_putchar('0' + n % 10);
+	_putchar('0' + (n % 10));
 	(*count)++;
 }
 
@@ -29,6 +29,21 @@ int handle_integer(va_list args)
 {
 	int n = va_arg(args, int);
 	int count = 0;
+
+	if (n == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+
+	if (n == INT_MIN)
+	{
+		_putchar('-');
+		_putchar('2');
+		_print_integer(147483648, &count);
+		count += 2;
+		return (count);
+	}
 
 	_print_integer(n, &count);
 
