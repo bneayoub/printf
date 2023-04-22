@@ -17,23 +17,23 @@ int _printf(const char *format, ...)
 	while (*format)
 	{
 		if (*format == '%')
-		{	
+		{
 			format++;
 			switch (*format)
-			{	
-				case 'c':
-					count += handle_char(args);
-					break;
-				case 's':
-					count += handle_string(args);
-					break;
-				case '%':
-					count += _putchar('%');
-					break;
-				default:
-					count+= _putchar('%');
-					count += _putchar(*format);
-					break;
+			{
+			case 'c':
+				count += handle_char(args);
+				break;
+			case 's':
+				count += handle_string(args);
+				break;
+			case '%':
+				count += _putchar('%');
+				break;
+			default:
+				count += _putchar('%');
+				count += _putchar(*format);
+				break;
 			}
 		}
 		else
