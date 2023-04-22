@@ -11,35 +11,33 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	const char *p;
 	int count = 0;
 
 	va_start(args, format);
-	for (p = format; *p; ++p)
+	while (*format)
 	{
-		if (*p == '%')
+		if (*format == '%')
 		{
-			++p;
-			if (*p == '\0')
-				break;
-			switch (*p)
+			switch (*format)
 			{
-			case 'c':
-				count += handle_char(args);
-				break;
-			case 's':
-				count += handle_string(args);
-				break;
-			case '%':
-				count += _putchar('%');
-				break;
-			default:
-				count += _putchar(*p);
-				break;
+				case 'c':
+					count += handle_char(args);
+					break;
+				case 's':
+					count += handle_string(args);
+					break;
+				case '%':
+					count += _putchar('%');
+					break;
+				default:
+					count+= _putchar('%');
+					count += _putchar(*format);
+					break;
 			}
 		}
 		else
-			count += _putchar(*p);
+			count += _putchar(*format);
+		format++;
 	}
 	va_end(args);
 	return (count);
