@@ -44,6 +44,5 @@ int handle_specifier(char specifier, va_list args)
 		count += _putchar(specifier);
 		break;
 	}
-
 	return (count);
 }
