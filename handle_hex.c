@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * handle_hex_lower - Handles the lowercase 'x' hex conversion specifier
  * @args: List of arguments
