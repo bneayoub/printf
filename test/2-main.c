@@ -1,5 +1,9 @@
 #include "../main.h"
-
+/**
+ * main - Entry point
+ *
+ * Return: Always 0
+ */
 int main(void)
 {
     int num1 = 45, num2 = -100, num3 = 0;
