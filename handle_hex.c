@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * handle_hex_lower - Handles the lowercase 'x' hex conversion specifier
+ * handle_hex_lower - Handles the lowercase '%x' hex conversion specifier
  * @args: List of arguments
  * Return: The number of characters printed
  */
@@ -12,7 +12,7 @@ int handle_hex_lower(va_list args)
 }
 
 /**
- * handle_hex_upper - Handles the uppercase 'X' hex conversion specifier
+ * handle_hex_upper - Handles the uppercase '%X' hex conversion specifier
  * @args: List of arguments
  * Return: The number of characters printed
  */
