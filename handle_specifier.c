@@ -43,6 +43,8 @@ int handle_specifier(char specifier, va_list args)
 		count += handle_custom_S(args);
 		break;
 	default:
+		if (specifier == '\0')
+			return (-1);
 		count += _putchar('%');
 		count += _putchar(specifier);
 		break;
