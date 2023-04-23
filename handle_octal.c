@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * handle_octal - Handles 'o' specifier
  * @args: The argument list to get the string from
