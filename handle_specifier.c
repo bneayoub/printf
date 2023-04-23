@@ -39,6 +39,9 @@ int handle_specifier(char specifier, va_list args)
 	case 'X':
 		count += handle_hex_upper(args);
 		break;
+	case 'S':
+		count += handle_custom_S(args);
+		break;
 	default:
 		count += _putchar('%');
 		count += _putchar(specifier);
