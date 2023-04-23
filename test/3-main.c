@@ -27,6 +27,5 @@ int main(void)
     printed_chars = _printf("Mixed: %u, %o, %x, %X\n", 12345, 12345, 12345, 12345);
     printf("Expected output: Mixed: 12345, 30071, 3039, 3039\n");
     printf("Characters printed: %d\n", printed_chars);
-
     return (0);
 }
