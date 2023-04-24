@@ -23,6 +23,7 @@ int handle_hex_lower(va_list args);
 int handle_hex_upper(va_list args);
 int print_hex(unsigned int num, int upper);
 int handle_specifier(char specifier, va_list args);
+int handle_specifier_ext(char specifier, va_list args);
 int print_hex_char(unsigned char c);
 int handle_custom_S(va_list args);
 
