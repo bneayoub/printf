@@ -7,44 +7,43 @@
  */
 int handle_specifier(char specifier, va_list args)
 {
-	int count = 0;
+	int count = -1;
 
 	switch (specifier)
 	{
 	case 'c':
-		count += handle_char(args);
+		count = handle_char(args);
 		break;
 	case 's':
-		count += handle_string(args);
+		count = handle_string(args);
 		break;
 	case '%':
-		count += _putchar('%');
+		count = _putchar('%');
 		break;
 	case 'd':
 	case 'i':
-		count += handle_integer(args);
+		count = handle_integer(args);
 		break;
 	case 'b':
-		count += handle_binary(args);
+		count = handle_binary(args);
 		break;
 	case 'u':
-		count += handle_unsigned_int(args);
+		count = handle_unsigned_int(args);
 		break;
 	case 'o':
-		count += handle_octal(args);
+		count = handle_octal(args);
 		break;
 	case 'x':
-		count += handle_hex_lower(args);
+		count = handle_hex_lower(args);
 		break;
 	case 'X':
-		count += handle_hex_upper(args);
+		count = handle_hex_upper(args);
 		break;
 	case 'S':
-		count += handle_custom_S(args);
+		count = handle_custom_S(args);
 		break;
 	default:
-		count += _putchar('%');
-		count += _putchar(specifier);
+		count = -1;
 		break;
 	}
 	return (count);
