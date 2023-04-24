@@ -62,6 +62,9 @@ int handle_specifier_ext(char specifier, va_list args)
 	case 'S':
 		count += handle_custom_S(args);
 		break;
+	case 'p':
+		count += handle_pointer(args);
+		break;
 	default:
 		count += _putchar('%');
 		count += _putchar(specifier);
