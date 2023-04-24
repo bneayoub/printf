@@ -24,6 +24,26 @@ int handle_specifier(char specifier, va_list args)
 	case 'i':
 		count += handle_integer(args);
 		break;
+	default:
+		count += handle_specifier_ext(specifier, args);
+		break;
+	}
+
+	return (count);
+}
+
+/**
+ * handle_specifier_ext - Handles extra conversion specifiers
+ * @specifier: The conversion specifier character
+ * @args: args list
+ * Return: Count of characters printed
+ */
+int handle_specifier_ext(char specifier, va_list args)
+{
+	int count = 0;
+
+	switch (specifier)
+	{
 	case 'b':
 		count += handle_binary(args);
 		break;
@@ -47,5 +67,6 @@ int handle_specifier(char specifier, va_list args)
 		count += _putchar(specifier);
 		break;
 	}
+
 	return (count);
 }
