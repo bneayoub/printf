@@ -13,19 +13,22 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	if (format == NULL)
 		return (-1);
+
 	while (*format)
 	{
+		if (*format == '%' && *(format + 1) == '\0')
+			return (count);
+
 		if (*format == '%')
 		{
 			format++;
-			if (*format == '\0')
-				break;
-			count += handle_specifier(*format, args);
+			if (*format == '%')
+				count += _putchar('%');
+			else
+				count += handle_specifier(*format, args);
 		}
 		else
-		{
 			count += _putchar(*format);
-		}
 		format++;
 	}
 	va_end(args);
