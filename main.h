@@ -6,6 +6,7 @@
 #include <stddef.h>
 #include <stdio.h>
 #include <limits.h>
+#include <stdint.h>
 
 /* Function prototypes */
 int _putchar(char c);
@@ -26,5 +27,6 @@ int handle_specifier(char specifier, va_list args);
 int handle_specifier_ext(char specifier, va_list args);
 int print_hex_char(unsigned char c);
 int handle_custom_S(va_list args);
+int handle_pointer(va_list args);
 
 #endif
