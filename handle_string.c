@@ -15,30 +15,7 @@ int handle_string(va_list args)
 
 	while (str[i])
 	{
-		if (str[i] == '\\')
-		{
-			i++;
-			switch (str[i])
-			{
-			case 'n':
-				count += _putchar('\n');
-				break;
-			case 't':
-				count += _putchar('\t');
-				break;
-			case '%':
-				count += _putchar('%');
-				break;
-			default:
-				count += _putchar('\\');
-				count += _putchar(str[i]);
-				break;
-			}
-		}
-		else
-		{
-			count += _putchar(str[i]);
-		}
+		count += _putchar(str[i]);
 		i++;
 	}
 	return (count);
