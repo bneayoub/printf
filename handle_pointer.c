@@ -9,33 +9,31 @@ int handle_pointer(va_list args)
 {
 	void *ptr = va_arg(args, void *);
 	uintptr_t address = (uintptr_t)ptr;
-	char buffer[32];
-	int i;
+	char hex_buffer[16];
 	int count = 0;
 	int idx;
-	int digit;
+	int i;
 
 	count += _putchar('0');
 	count += _putchar('x');
 
-	if (address == 0)
-	{
-		count += _putchar('0');
-		return count;
-	}
-
 	idx = 0;
-	while (address)
+	while (address > 0)
 	{
-		digit = address % 16;
-		buffer[idx++] = (digit < 10) ? '0' + digit : 'a' + (digit - 10);
+		int remainder = address % 16;
+
+		if (remainder < 10)
+			hex_buffer[idx++] = remainder + '0';
+		else
+			hex_buffer[idx++] = remainder - 10 + 'a';
+
 		address /= 16;
 	}
 
 	for (i = idx - 1; i >= 0; i--)
 	{
-		count += _putchar(buffer[i]);
+		count += _putchar(hex_buffer[i]);
 	}
 
-	return count;
+	return (count);
 }
