@@ -3,24 +3,12 @@
  * _print_integer - prints an integer using recursion
  * @n: int to print
  * @count: pointer to count of chars printed
- * @flag: flagg character
  */
-void _print_integer(int n, int *count, char flag)
+void _print_integer(int n, int *count)
 {
-	if (n < 0)
-	{
-		_putchar('-');
-		(*count)++;
-		n = -n;
-	}
-	else if (flag == '+' || flag == ' ')
-	{
-		_putchar(flag);
-		(*count)++;
-	}
 	if (n / 10)
 	{
-		_print_integer(n / 10, count, flag);
+		_print_integer(n / 10, count);
 	}
 	_putchar('0' + (n % 10));
 	(*count)++;
@@ -48,16 +36,27 @@ int handle_integer(va_list args, char flag)
 		return (count + 1);
 	}
 
-	if (n == INT_MIN)
+	if (n < 0)
 	{
 		_putchar('-');
+		count++;
+		n = -n;
+	}
+	else if (flag == '+' || flag == ' ')
+	{
+		_putchar(flag);
+		count++;
+	}
+
+	if (n == INT_MIN)
+	{
 		_putchar('2');
-		_print_integer(147483648, &count, flag);
-		count += 2;
+		_print_integer(147483648, &count);
+		count += 1;
 		return (count);
 	}
 
-	_print_integer(n, &count, flag);
+	_print_integer(n, &count);
 
 	return (count);
 }
