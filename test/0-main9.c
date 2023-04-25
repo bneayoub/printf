@@ -64,8 +64,8 @@ int main()
 	printf("Expected length:    [%d]\n", length1);
 	printf("Current length:     [%d]\n", length2);
 	printf("\n\n");
-	length1 = printf("Expected output:    %sForLife\n", "Hala's IQ loading ...");
-	length2 = _printf("Current output:     %sForLife\n", "Hala's IQ loading ...");
+	length1 = printf("Expected output:    %sForLife\n", "Hala's IQ growing ...");
+	length2 = _printf("Current output:     %sForLife\n", "Hala's IQ growing ...");
 	printf("Expected length:    [%d]\n", length1);
 	printf("Current length:     [%d]\n", length2);
 
