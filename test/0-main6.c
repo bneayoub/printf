@@ -10,5 +10,8 @@ int main(void)
 	printf("-------------------\n");
 	_printf("%HA\n");
 	printf("%HA\n");
+	printf("\n\n");
+	_printf("%K\n");
+	printf("%K\n");
 	return (0);
 }
