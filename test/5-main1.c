@@ -5,7 +5,7 @@ int main(void)
 	void *ptr1, *ptr2, *ptr3;
 	int len_1, len_2;
 
-	printf("-> POINTER CASES <-\n");
+	printf("->MORE POINTER CASES <-\n");
 	printf("-------------------\n");
 
 	ptr1 = &ptr1;
