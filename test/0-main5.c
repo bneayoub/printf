@@ -6,7 +6,9 @@
  */
 int main(void)
 {
-	_printf("%c",'\0');
-	printf("%c",'\0');
+	printf("-> NULL CHAR TERMINATOR CASE <-\n");
+	printf("-------------------\n");
+	_printf("%c", '\0');
+	printf("%c", '\0');
 	return (0);
 }
