@@ -6,8 +6,8 @@
  */
 int main(void)
 {
-    int n = 123456;
-    int m = -182;
+    int n = 262;
+    int m = -25403;
 
     printf("%d\n", n);
     _printf("%d\n", n);
