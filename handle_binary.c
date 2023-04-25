@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * handle_binary - Handles the 'b' specifier
- * @args: The argument list to get the integer from
+ * @args: args list
  * Return: number of chars printed
  */
 int handle_binary(va_list args)
@@ -18,20 +18,15 @@ int handle_binary(va_list args)
 	while (mask != 0)
 	{
 		if ((n & mask) == 0)
-		{
 			count += _putchar('0');
-		}
 		else
-		{
 			count += _putchar('1');
-		}
+
 		mask >>= 1;
 	}
 
 	if (count == 0)
-	{
 		count += _putchar('0');
-	}
 
 	return (count);
 }
