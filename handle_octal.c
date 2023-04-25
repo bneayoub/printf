@@ -2,12 +2,18 @@
 /**
  * handle_octal - Handles 'o' specifier
  * @args: The argument list to get the string from
+ * @flag: flag character
  * Return: The number of characters printed
  */
-int handle_octal(va_list args)
+int handle_octal(va_list args, char flag)
 {
 	unsigned int num = va_arg(args, unsigned int);
 
+	if (flag == '#')
+	{
+		_putchar('0');
+		return (print_octal(num) + 1);
+	}
 	return (print_octal(num));
 }
 
