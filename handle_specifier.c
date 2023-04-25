@@ -3,9 +3,10 @@
  * handle_specifier - Handles conversion specifiers
  * @specifier: The conversion specifier character
  * @args: The variable argument list
+ * @flag: The flag character
  * Return: Count of characters printed
  */
-int handle_specifier(char specifier, va_list args)
+int handle_specifier(char specifier, va_list args, char flag)
 {
 	int count = 0;
 
@@ -22,10 +23,10 @@ int handle_specifier(char specifier, va_list args)
 		break;
 	case 'd':
 	case 'i':
-		count += handle_integer(args);
+		count += handle_integer(args, flag);
 		break;
 	default:
-		count += handle_specifier_ext(specifier, args);
+		count += handle_specifier_ext(specifier, args, flag);
 		break;
 	}
 
@@ -36,9 +37,10 @@ int handle_specifier(char specifier, va_list args)
  * handle_specifier_ext - Handles extra conversion specifiers
  * @specifier: The conversion specifier character
  * @args: args list
+ * @flag: The flag character
  * Return: Count of characters printed
  */
-int handle_specifier_ext(char specifier, va_list args)
+int handle_specifier_ext(char specifier, va_list args, char flag)
 {
 	int count = 0;
 
@@ -51,13 +53,13 @@ int handle_specifier_ext(char specifier, va_list args)
 		count += handle_unsigned_int(args);
 		break;
 	case 'o':
-		count += handle_octal(args);
+		count += handle_octal(args, flag);
 		break;
 	case 'x':
-		count += handle_hex_lower(args);
+		count += handle_hex_lower(args, flag);
 		break;
 	case 'X':
-		count += handle_hex_upper(args);
+		count += handle_hex_upper(args, flag);
 		break;
 	case 'S':
 		count += handle_custom_S(args);
