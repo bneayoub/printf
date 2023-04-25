@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	_printf("%K\n");
-	printf("%K\n");
+	_printf("%HA\n");
+	printf("%HA\n");
 	return (0);
 }
