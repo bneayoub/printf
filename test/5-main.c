@@ -9,9 +9,9 @@ int main(void)
     printf("-> POINTER CASES <-\n");
     printf("-------------------\n");
     
-    printf("Expected output:    ");
+    printf("Expected output: ");
     len_1 = printf("%p\n", ptr);
-    printf("Current output:     ");
+    printf("Current output: ");
     len_2 = _printf("%p\n", ptr);
 
     printf("Expected length:    [%d]\n", len_1);
