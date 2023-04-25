@@ -9,6 +9,8 @@ int main(void)
     int n = 262;
     int m = -25403;
 
+    printf("-> SIMPLE SIGNED AND UNSIGNED INT CASE<-\n");
+    printf("-------------------\n");
     printf("%d\n", n);
     _printf("%d\n", n);
     printf("%i\n", n);
