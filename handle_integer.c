@@ -3,7 +3,7 @@
  * _print_integer - prints an integer using recursion
  * @n: int to print
  * @count: pointer to count of chars printed
- * @flag: flag character
+ * @flag: flagg character
  */
 void _print_integer(int n, int *count, char flag)
 {
