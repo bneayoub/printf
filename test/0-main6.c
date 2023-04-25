@@ -6,6 +6,8 @@
  */
 int main(void)
 {
+	printf("-> INVALID SPECIFIER CASE <-\n");
+	printf("-------------------\n");
 	_printf("%HA\n");
 	printf("%HA\n");
 	return (0);
