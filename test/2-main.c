@@ -16,7 +16,7 @@ int main(void)
 	_putchar('\n');
 	printf("num1 in binary: %b\n", num1);
     printf("num2 in binary: %b\n", num2);
-    _printf("num3 in binary: %b\n", num3);
+    printf("num3 in binary: %b\n", num3);
     _printf("num4 in binary: %b\n", num4);
     return (0);
 }
