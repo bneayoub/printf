@@ -32,7 +32,8 @@ int handle_custom_S(va_list args)
 /**
  * print_hex_char - Prints an unsigned char as its hexadecimal value
  * @c: The character to print as hexadecimal
- * @flag: The flag character, not used in this function, but added for consistency
+ * @flag: The flag character, not used in this 
+ * function, but added for consistency
  *
  * Return: The number of characters printed
  */
