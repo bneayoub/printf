@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * handle_char - handles the case c specifier
- * @args: the argument list to get the char from
+ * @args: args list
  * Return: the number of chars printed
  */
 int handle_char(va_list args)

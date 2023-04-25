@@ -2,7 +2,7 @@
 /**
  * handle_binary - Handles the 'b' specifier
  * @args: args list
- * Return: number of chars printed
+ * Return: the number of chars printed
  */
 int handle_binary(va_list args)
 {
