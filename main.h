@@ -14,7 +14,7 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 int handle_char(va_list args);
 int handle_string(va_list args);
-void _print_integer(int n, int *count);
+void _print_integer(int n, int *count, char flag);
 int handle_integer(va_list args, char flag);
 int handle_binary(va_list args);
 int handle_unsigned_int(va_list args);
