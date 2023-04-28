@@ -3,23 +3,28 @@
  * _print_integer - prints an integer using recursion
  * @n: int to print
  * @count: pointer to count of chars printed
+ * @is_start: 1 or 0 when recursion starts
  */
-void _print_integer(int n, int *count, char flag)
+void _print_integer(int n, int *count, char flag, int is_start)
 {
-	if (n < 0)
+	if (is_start)
 	{
-		_putchar('-');
-		(*count)++;
-		n = -n;
+		if (n < 0)
+		{
+			_putchar('-');
+			(*count)++;
+			n = -n;
+		}
+		else if (flag == '+' || flag == ' ')
+		{
+			_putchar(flag);
+			(*count)++;
+		}
 	}
-	else if (flag == '+' || (flag == ' ' && *count == 0))
-	{
-		_putchar(flag);
-		(*count)++;
-	}
+
 	if (n / 10)
 	{
-		_print_integer(n / 10, count, '\0');
+		_print_integer(n / 10, count, flag, 0);
 	}
 	_putchar('0' + (n % 10));
 	(*count)++;
@@ -47,27 +52,16 @@ int handle_integer(va_list args, char flag)
 		return (count + 1);
 	}
 
-	if (n < 0)
-	{
-		_putchar('-');
-		count++;
-		n = -n;
-	}
-	else if (flag == '+' || flag == ' ')
-	{
-		_putchar(flag);
-		count++;
-	}
-
 	if (n == INT_MIN)
 	{
+		_putchar('-');
 		_putchar('2');
-		_print_integer(147483648, &count, flag);
-		count += 1;
+		_print_integer(147483648, &count, flag, 0);
+		count += 2;
 		return (count);
 	}
 
-	_print_integer(n, &count, flag);
+	_print_integer(n, &count, flag, 1);
 
 	return (count);
 }
