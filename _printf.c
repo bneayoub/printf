@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * _printf - implementation of printf from scratch
  * @format: the string containing specifiers
@@ -57,6 +58,7 @@ int _printf(const char *format, ...)
 int handle_flag_and_specifier(const char **format, va_list args, int *count)
 {
 	char flag = '\0';
+	char length = '\0';
 	int result;
 
 	if (**format == '+' || **format == ' ' || **format == '#')
@@ -68,7 +70,18 @@ int handle_flag_and_specifier(const char **format, va_list args, int *count)
 	{
 		flag = '\0';
 	}
-	result = handle_specifier(**format, args, flag);
+
+	if (**format == 'l' || **format == 'h')
+	{
+		length = **format;
+		(*format)++;
+	}
+	else
+	{
+		length = '\0';
+	}
+
+	result = handle_specifier(**format, args, flag, length);
 
 	if (result == -1)
 		return (-1);
